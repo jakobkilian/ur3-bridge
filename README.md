@@ -26,6 +26,12 @@ I will add some more details on my experiments (which network hardware, which fr
 
 You might ask, why we need just another interface to achieve this. It is pretty much the need for universality and simplicity that motivated me to do this:
 
+
+
+https://github.com/user-attachments/assets/cf530003-c5e4-409b-82cf-cb6f08d3dad7
+
+
+
 <details>
 <summary>**Why another interface for the UR3?**</summary>
 

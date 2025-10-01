@@ -13,10 +13,10 @@ Controlling a [Universal Robots UR3](https://www.universal-robots.com/de/produkt
 ## The Challenge: Fluent Movement via Network
 
 This is a spoiler on what I wanted to achieve but had problems with. Looks simple, wasn't that easy though.
-
+**Why are fluent movements on the UR3 so hard to achieve?** 
 <details>
 
-<summary>**Why are fluent movements on the UR3 so hardtop achieve?**</summary>
+<summary>read more...</summary>
 
 In most industry-standard applications for robots of this type, the start and end points of movements and their timing are known. Depending on the application, commands such as movej or movel are used, which allow the arm to be moved with parameters such as _time, acceleration, maximum speeds, and interpolating blends between points_. The principle is always the same: start at A, accelerate according to the parameters, slow down, and stop at point B. However, if the robot is supposed to follow a hand gesture or move along vector paths in a smooth, uninterrupted motion, it becomes more tricky: sending many individual points would cause it to stop at each one. We need to use the servoj to acheive this and send new points at a rate sufficient to not hear or see the "frames". 
 
@@ -26,14 +26,12 @@ I will add some more details on my experiments (which network hardware, which fr
 
 You might ask, why we need just another interface to achieve this. It is pretty much the need for universality and simplicity that motivated me to do this:
 
-
-
 https://github.com/user-attachments/assets/cf530003-c5e4-409b-82cf-cb6f08d3dad7
 
 
-
+**Why another interface for the UR3?**
 <details>
-<summary>**Why another interface for the UR3?**</summary>
+<summary>read more...</summary>
 
 UR offers a [bunch of possibilities to interface with the UR3](https://www.universal-robots.com/articles/ur/interface-communication/overview-of-client-interfaces/). I looked through this list, but they all had drawbacks in terms of compatibility and universality. E.g. "RTDE" required installations on the client side – some having issues about the installation which haven't been solved for years at the time. On top connecting to UR controller by default only works with Ethernet and fix IP addresses. Having e.g. microcontrollers in a WiFi network to control the robot would be tricky in this setup. So I wondered why there wasn't a easy-to-use universal interface that could be used to remotely control the robot from any programming language and any device via network. That's why I build a OSC/MQTT bridge to control the robot from within e.g. python, MaxMSP, Processing or others on any device in a network (Ethernet/WiFi) set up by an additional intermediate Raspberry Pi. This worked very well for my use cases and can hopefully be rebuild by following the instructions in the repository.
 

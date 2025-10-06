@@ -122,7 +122,17 @@ payload: backup
 
 ## Technical Details
 
+### About the Setup
+
 Find a description of how the Raspberry Pi and the Network needs to be set up in order to work in a separate document: [Technical Details](/technical-details.md).
+
+### About the UR3 and its startup procedure
+
+Also find [some notes](/ur3.md) on how the UR3 trolley ist set up and how to startup the robo arm.
+
+### Install 
+
+If you wan to set up the bridge on your devices, read the [install instructions](install.md). Be aware that this involves some steps specific to your setup. Just sharing an image for the raspy
 
 ## Performance
 

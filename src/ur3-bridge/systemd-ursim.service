@@ -1,0 +1,15 @@
+[Unit]
+Description=python script that receives mqtt cmds and sends them to the robo via TCP
+After=network.target
+
+[Service]
+ExecStart=/home/urpi/mqtt-ur3-bridge/src/ur3-bridge/start.sh
+
+WorkingDirectory=/home/urpi/mqtt-ur3-bridge/src/ur3-bridge
+StandardOutput=file:/home/urpi/mqtt-ur3-bridge/src/ur3-bridge/log.out
+StandardError=file:/home/urpi/mqtt-ur3-bridge/src/ur3-bridge/log.err
+Restart=always
+User=urpi
+
+[Install]
+WantedBy=multi-user.target

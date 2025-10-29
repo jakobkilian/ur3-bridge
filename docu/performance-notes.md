@@ -26,13 +26,13 @@ For **teaching** purposes, I would always recommend to use MQTT only. With vario
 
 ### URPi
 
-On a Raspberry Pi there is a Python script (see [/src/ur3-bridge](/src/ur3-bridge)) that acts as the bridge by relaying incoming OSC/MQTT messages to the UR controller via TCP sockets.
+On a Raspberry Pi there is a Python script (see [../src/ur3-bridge](../src/ur3-bridge)) that acts as the bridge by relaying incoming OSC/MQTT messages to the UR controller via TCP sockets.
 
 ### TCP + URscript
 
 There are multiple ways to interface with the robot arm (interpreter mode, RTDE, ...) which all have disadvantages and require dependencies (that are sometimes broken/unavailable, see RTDE on macOS). This is the whole reason why this project exists: to create an easy interface that can be used with beginner-friendly programming environments like MaxMSP.
 
-**On the UR3 a URScript application is running (see [/src/ur3-bridge](/src/ur3-bridge)) that handles incoming TCP messages** from the URPi in separate threads and controls the robot arm (high frequencies needed to do that smoothly).
+**On the UR3 a URScript application is running (see [../src/ur3-bridge](../src/ur3-bridge)) that handles incoming TCP messages** from the URPi in separate threads and controls the robot arm (high frequencies needed to do that smoothly).
 
 # Hardware and Networking
 
@@ -55,7 +55,7 @@ OSC → Thread Pool → TCP → UR3 Processing
 ~1ms      ~1ms      ~1ms     Variable
 ```
 
-Requesting “getStatus” (same total roundtrip times) shows how long the UR3 needed to respond back to the URPI when requested. This is usually <2ms. Check out the [examples](/examples) where this is used to check if the UR3 is reachable/online.
+Requesting “getStatus” (same total roundtrip times) shows how long the UR3 needed to respond back to the URPI when requested. This is usually <2ms. Check out the [../examples](../examples) where this is used to check if the UR3 is reachable/online.
 
 **The UR3 is in any case the bigger bottleneck.** Depending on the use case you **want** it to queue all commands (e.g. the robot arm sequentially moves to specific positions which takes time) *or* to drop buffered commands if new ones arrive (e.g. you want smooth real-time movement according to sensor data with on-the-fly change of direction).
 

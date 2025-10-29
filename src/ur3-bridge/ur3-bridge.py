@@ -24,7 +24,7 @@ TIMEOUT_LIMIT_SECONDS = 5
 
 # MQTT-Details
 BROKER = "localhost"
-PORT = 1883
+PORT = 1884 # Default MQTT port is 1883, using 1884 to access locally without password
 USERNAME = "ur3mqtt"
 PASSWORD = "lolab"
 TOPIC_UR_SET = "ur3/set/"

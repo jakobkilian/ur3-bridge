@@ -67,6 +67,18 @@ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge
 bash Miniforge3-Linux-aarch64.sh
 ````
 
+Edit username and password for MQTT in the py script:
+
+````sh
+sudo nano ur3-bridge.py
+````
+
+And edit these lines:
+
+````sh
+USERNAME = "urpi"
+PASSWORD = "urpi"
+````
 
 Reload the shell after installation:
 

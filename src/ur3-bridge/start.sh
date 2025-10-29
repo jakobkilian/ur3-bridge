@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the directory of the current script
-SCRIPT_DIR=$(dirname "$0")
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Dynamically extract the username from SCRIPT_DIR
 USER_NAME=$(echo "$SCRIPT_DIR" | awk -F'/' '{print $3}')
 

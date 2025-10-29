@@ -2,7 +2,25 @@
 
 # UR3 Bridge
 
-## Why all this? The UR3 in Creative Applications
+This file is the **entrance point to the documentation**. Read it first and then check out the more specific docu files linked directly below for more specific docu.
+
+## Documentation Overview
+- [All Commands one can "set" with this Bridge](docu/set-commands.md)
+- [Technical Details and Network Setup](docu/technical-details.md)
+- [Ur3 Trolley and Startup Procedure](docu/ur3-notes.md)
+- [Notes on the Performance of the Bridge](docu/performance-notes.md)
+
+**Install and Config**
+
+If you wan to set up the bridge with your own UR3 there are some things to do:
+
+1. [Set up a Raspberry Pi](https://github.com/jakobkilian/raspi-setup) with my general instructions to have it accessible via Wi-Fi and Ethernet and other things
+2. Follow the [install instructions](docu/install-bridge.md) step by step to install and run the bridge on this Raspi
+3. Load the [urp script](src/urscript/mqtt-ur3-bridge-main.urp) file to your UR3 in order to connect it to the bridge
+
+## Motivation & Background
+
+### So, why all this? The UR3 in Creative Applications
 
 Controlling a [Universal Robots UR3](https://www.universal-robots.com/de/produkte/ur3e/) is far from trivial, especially when it comes to performing smooth, real-time movements based on sensor input. In addition to the inherent complexity of programming crash-free 3D movement UR lacks proper documentation and sometimes provides buggy installers. 
 
@@ -10,7 +28,7 @@ Controlling a [Universal Robots UR3](https://www.universal-robots.com/de/produkt
 
 *These notes were made as part of my work at [KISD](http://kisd.de/), Cologne, and refer to the UR3 model that was available in my lab there.*
 
-## The Challenge: Fluent Movement via Network
+### The Challenge: Fluent Movement via Network
 
 This is a spoiler on what I wanted to achieve but had problems with. Looks simple, wasn't that easy though.
 **Why are fluent movements on the UR3 so hard to achieve?** 
@@ -41,7 +59,7 @@ UR offers a [bunch of possibilities to interface with the UR3](https://www.unive
 
 The UR3 Bridge lets you to control a Universal Robot UR3 over a local Ethernet **or** WiFi using simple commands over **OSC or MQTT**. It can therefore be used with any client (Smartphone, Laptop, Microcontroller) and with any application without installing software:  e.g. Python, C++, Arduino, Processing, MaxMSP, PureData, VVVV, TouchDesigner
 
-![240327-Overview](img/ur3-bridge-simple.jpg)
+![240327-Overview](docu/img/ur3-bridge-simple.jpg)
 
 ## General Usage
 
@@ -52,7 +70,7 @@ Send and receive **MQTT/OSC messages** to a Raspberry Pi running the UR3 Bridge 
 The **URPi** includes:
 
 - **Raspberry Pi** with specific configurations and network services running
-- **MQTT broker** "Mosquitto" running 
+- **MQTT broker** "mosquitto" running 
 - **ur3-bridge.py** script relaying incoming commands to UR3 via TCP socket
 
 ---
@@ -67,7 +85,7 @@ This results in the following overview chart with the UR3 Bridge parts in **blue
 
 ## How the Interface works
 
-The UR3 Bridge interface syntax is oriented at the official [URScript syntax](https://www.universal-robots.com/developer/urscript/) but differs in many cases.
+The UR3 Bridge interface syntax is oriented at the official [URScript syntax](https://www.universal-robots.com/developer/urscript/) but differs in some cases.
 
 A message to the UR3 bridge always consists of a topic and a payload, e.g.:
 
@@ -109,7 +127,7 @@ With MQTT simply send messages to the URPi (see Network Setup below)
 
 The payload is formatted as ASCII string. 
 
-**The most important topic is "ur3/set/cmd".** [Find all Set-Commands here](/set-commands.md).
+**The most important topic is "ur3/set/cmd".** [Find all Set-Commands here](docu/set-commands.md).
 This is an example in the OSC format:
 
 ````
@@ -124,20 +142,3 @@ topic: urpi
 payload: backup
 ````
 
-## Technical Details
-
-### About the Setup
-
-Find a description of how the Raspberry Pi and the Network needs to be set up in order to work in a separate document: [Technical Details](/technical-details.md).
-
-### About the UR3 and its startup procedure
-
-Also find [some notes](/ur3.md) on how the UR3 trolley ist set up and how to startup the robo arm.
-
-### Install 
-
-If you wan to set up the bridge on your devices, read the [install instructions](install.md). Be aware that this involves some steps specific to your setup. Just sharing an image for the raspy
-
-## Performance
-
-I did some evaluation on how well this setup can run. Please read the [Performance Notes](/performance-notes.md) for more information.

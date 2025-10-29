@@ -3,11 +3,11 @@ Description=python script that receives mqtt cmds and sends them to the robo via
 After=network.target
 
 [Service]
-ExecStart=/home/dietpi/mqtt-ur3-bridge/src/ur3-bridge/start.sh
+ExecStart=/home/dietpi/ur3-bridge/src/ur3-bridge/start.sh
 
-WorkingDirectory=/home/dietpi/mqtt-ur3-bridge/src/ur3-bridge
-StandardOutput=file:/home/dietpi/mqtt-ur3-bridge/src/ur3-bridge/log.out
-StandardError=file:/home/dietpi/mqtt-ur3-bridge/src/ur3-bridge/log.err
+WorkingDirectory=/home/dietpi/ur3-bridge/src/ur3-bridge
+StandardOutput=file:/home/dietpi/ur3-bridge/src/ur3-bridge/log.out
+StandardError=file:/home/dietpi/ur3-bridge/src/ur3-bridge/log.err
 Restart=always
 User=dietpi
 

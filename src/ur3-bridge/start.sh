@@ -1,5 +1,5 @@
 #!/bin/bash
-source activate ur
+source activate ur3-bridge
 
 # Get the directory of the current script
 SCRIPT_DIR=$(dirname "$0")

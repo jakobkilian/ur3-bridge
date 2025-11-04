@@ -81,7 +81,7 @@ The **UR3** (more precise: the UR3 controller) runs a custom URScript (**ur3-bri
 
 This results in the following overview chart with the UR3 Bridge parts in **blue**:
 
-![240327-Overview](img/ur3-bridge-overview.jpg)
+![240327-Overview](docu/img/ur3-bridge-overview.jpg)
 
 ## How the Interface works
 

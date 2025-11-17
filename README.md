@@ -2,13 +2,16 @@
 
 # UR3 Bridge
 
-This file is the **entrance point to the documentation**. Read it first and then check out the more specific docu files linked directly below for more specific docu.
+This file is the **entrance point to the documentation**. Read it first and then check out the more specific files linked directly below. 
+
+**Looking for the Credentials for the UR3 Bridge at KISD?** Find them in the UR3 Trolley!
 
 ## Documentation Overview
 - [All Commands one can "set" with this Bridge](docu/set-commands.md)
 - [Technical Details and Network Setup](docu/technical-details.md)
 - [Ur3 Trolley and Startup Procedure](docu/ur3-notes.md)
 - [Notes on the Performance of the Bridge](docu/performance-notes.md)
+- [Example Applications](docu/examples.md)
 
 **Install and Config**
 

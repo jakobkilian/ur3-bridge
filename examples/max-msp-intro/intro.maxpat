@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-92",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 371.46688711643219, 231.0, 308.0, 33.0 ],
+					"text" : "Find more docu at: https://github.com/jakobkilian/ur3-bridge/"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontface" : 1,
 					"fontsize" : 40.0,
 					"id" : "obj-136",
@@ -2108,7 +2120,7 @@
 					"patching_rect" : [ 1552.296376526355743, 3892.308184146881104, 184.800002753734589, 49.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 479.545437932014465, 3451.363513469696045, 531.944469809532166, 22.0 ],
-					"text" : "/ur3/set/cmd \"smoothPose: 0.000000, -0.180000, 0.032, -1.5, 0, 0\""
+					"text" : "/ur3/set/cmd \"smoothPose: -0.090900, -0.226640, 0.032, -1.5, 0, 0\""
 				}
 
 			}
@@ -4620,7 +4632,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 478.0, 375.0, 178.0, 22.0 ],
-									"text" : "692914.721458"
+									"text" : "45512.190375"
 								}
 
 							}
@@ -4751,7 +4763,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 156.0, 364.0, 178.0, 22.0 ],
-									"text" : "692914.721458"
+									"text" : "45512.190375"
 								}
 
 							}
